@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap');
+
+        :root {
+            --primary-pink: #ff5c8a;
+            --soft-pink: #ffd6e8;
+            --bg-gradient: linear-gradient(135deg, #ffd6e8 0%, #ffeef6 100%);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: var(--bg-gradient);
+            color: #444;
+            text-align: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            padding: 80px 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: var(--primary-pink);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .music {
+            margin: 20px auto;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 10px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .love-letter {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 92, 138, 0.1);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Interactive Button Section */
+        .reasons-box {
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 92, 138, 0.4);
+        }
+
+        #reason-text {
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--primary-pink);
+            min-height: 1.5em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08) rotate(2deg);
+            z-index: 10;
+        }
+
+        .footer {
+            padding: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            bottom: -10vh;
+            color: var(--primary-pink);
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatUp var(--duration) linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- REPLACE 'NAME' WITH HER NAME -->
+    <h1>For [HER NAME] ❤️</h1>
+    <p class="subtitle">Every second with you is a blessing</p>
+</header>
+
+<div class="music">
+    <audio id="loveSong" controls loop>
+        <!-- Place your song.mp3 in the same folder or use a YouTube link/direct URL -->
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+    <p style="font-size: 0.8rem; margin-top: 5px;">Press play for vibes 🎵</p>
+</div>
+
+<section>
+    <div class="love-letter">
+        <h2>💌 My Dear,</h2>
+        <p>
+            I wanted to create something as unique and beautiful as you are. 
+            This little corner of the internet is dedicated to us. 
+            Thank you for being the person who makes my heart skip a beat and for 
+            making every day feel like a dream come true.
+        </p>
+        <p><b>I love you more than words could ever express.</b></p>
+        
+        <div class="reasons-box">
+            <button class="btn" onclick="showReason()">Click for a reason I love you</button>
+            <p id="reason-text"></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>📸 Our Beautiful Moments</h2>
+    <div class="gallery">
+        <!-- Add your photos here -->
+        <img src="img1.jpg" alt="Moment 1">
+        <img src="img2.jpg" alt="Moment 2">
+        <img src="img3.jpg" alt="Moment 3">
+        <img src="img4.jpg" alt="Moment 4">
+    </div>
+</section>
+
+<section>
+    <h2>🐰 Forever & Always</h2>
+    <p>We belong together, just like this:</p>
+    <img src="https://i.imgur.com/7yUvePI.png" width="200" style="filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));">
+</section>
+
+<div class="footer">
+    Made with ❤️ by [YOUR NAME]<br>
+    2024 - Forever
+</div>
+
+<script>
+    // 1. Floating Hearts Logic
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = ["❤️", "💖", "✨", "🌸", "💕"][Math.floor(Math.random() * 5)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+        
+        const duration = (Math.random() * 3 + 4);
+        heart.style.setProperty('--duration', duration + 's');
+        
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), duration * 1000);
+    }
+    setInterval(createHeart, 400);
+
+    // 2. Interactive Reasons Logic
+    const reasons = [
+        "The way your eyes sparkle when you laugh.",
+        "How safe I feel when I'm with you.",
+        "Your kindness towards everyone you meet.",
+        "The way you support my wildest dreams.",
+        "Your incredible sense of humor.",
+        "The way you make even a simple walk feel like an adventure.",
+        "You are my best friend and my soulmate."
+    ];
+
+    function showReason() {
+        const textElement = document.getElementById("reason-text");
+        const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+        
+        // Add a small fade effect
+        textElement.style.opacity = 0;
+        setTimeout(() => {
+            textElement.innerText = randomReason;
+            textElement.style.opacity = 1;
+            textElement.style.transition = "0.5s";
+        }, 200);
+    }
+</script>
+
+</body>
+</html>
